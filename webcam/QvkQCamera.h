@@ -6,6 +6,7 @@
 
 #include <QCamera>
 #include <QCheckBox>
+
 class QvkQCamera: public QObject
 {
   

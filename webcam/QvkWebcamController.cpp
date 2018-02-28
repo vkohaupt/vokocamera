@@ -56,6 +56,7 @@ void QvkWebcamController::slot_addCamera( QString description, QString device )
 
             QvkQCheckboxDescription *qCheckboxDescription = new QvkQCheckboxDescription( description );
             qCheckboxDescription->setObjectName( "CheckboxDescription" + device );
+            qCheckboxDescription->setUi( myUi );
             cameraHBoxLayout->addWidget(qCheckboxDescription);
 
             QvkQLabelDevice *qLabelDevice = new QvkQLabelDevice();
@@ -87,6 +88,7 @@ void QvkWebcamController::slot_addCamera( QString description, QString device )
 
         QvkQCheckboxDescription *qCheckboxDescription = new QvkQCheckboxDescription(description );
         qCheckboxDescription->setObjectName( "CheckboxDescription" + device );
+        qCheckboxDescription->setUi( myUi );
         cameraHBoxLayout->addWidget(qCheckboxDescription);
 
         QvkQLabelDevice *qLabelDevice = new QvkQLabelDevice();
@@ -149,28 +151,6 @@ void QvkWebcamController::slot_removedCamera( QString device )
         }
     }
 }
-
-/*
-void QvkWebcamController::webcamOnOff( QCheckBox *checkBox, int index, bool state, QString device, QString resultion )
-{
-  if ( state == true )
-  {
-     listQvkQCamera.append( new QvkQCamera( checkBox, index, state, device, resultion ) );
-     listQvkQCamera.last()->slot_start();
-  }
-  else
-  {
-     for ( int i = 0; i < listQvkQCamera.count(); i++  )
-     {
-         if ( listQvkQCamera.at(i)->objectName() == "QvkQCamera" + QString::number(index) )
-         {
-             listQvkQCamera.at(i)->slot_stop();
-             listQvkQCamera.removeAt(i);
-         }
-     }
-  }
-}
-*/
 
 
 void QvkWebcamController::slot_addCameraOptions( QByteArray device )
