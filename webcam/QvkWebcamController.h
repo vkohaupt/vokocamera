@@ -5,7 +5,6 @@
 #include "ui_surface.h"
 #include "QvkMsgInWebcamWindow.h"
 #include "QvkWebcamWatcher.h"
-#include "QvkQCamera.h"
 
 #include <QCamera>
 #include <QComboBox>

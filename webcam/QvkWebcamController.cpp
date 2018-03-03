@@ -6,8 +6,6 @@
 
 #include <QCameraInfo>
 #include <QCameraViewfinder>
-#include <QTest>
-#include <QEvent>
 
 // Hint: min. Qt 5.9.2
 
