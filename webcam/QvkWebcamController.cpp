@@ -109,6 +109,17 @@ void QvkWebcamController::slot_addCamera( QString description, QString device )
 
 void QvkWebcamController::slot_removedCamera( QString device )
 {
+    // Wenn wien Kamerafenster geöffnet ist muß dieses zuvor geschloßen werden
+    QList<QCheckBox *> listQCheckBox = myUi.scrollAreaWidgetContents->findChildren<QCheckBox *>();
+    for ( int i = 0; i < listQCheckBox.count(); i++ )
+    {
+        if ( listQCheckBox.at(i)->objectName() == "CheckboxDescription" + device )
+        {
+            if ( listQCheckBox.at(i)->checkState() == Qt::Checked )
+               listQCheckBox.at(i)->click();
+        }
+    }
+
     // Zuerst alle zu löschenden widgets ermitteln...
     QList<QWidget *> listRemoveWidgets;
     QList<QWidget *> listQWidget = myUi.scrollAreaWidgetContents->findChildren<QWidget *>();
