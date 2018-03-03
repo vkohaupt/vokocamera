@@ -65,6 +65,7 @@ void QvkWebcamController::slot_addCamera( QString description, QString device )
 
             QvkQComboboxResolution *qComboboxResolution = new QvkQComboboxResolution();
             qComboboxResolution->setObjectName( "ComboboxResolution" + device );
+            qComboboxResolution->setUi( myUi );
             cameraHBoxLayout->addWidget( qComboboxResolution );
 
             vertikalSpacer = new QSpacerItem( 20, 40, QSizePolicy::Minimum, QSizePolicy::Expanding );
@@ -97,6 +98,7 @@ void QvkWebcamController::slot_addCamera( QString description, QString device )
 
         QvkQComboboxResolution *qComboboxResolution = new QvkQComboboxResolution();
         qComboboxResolution->setObjectName( "ComboboxResolution" + device );
+        qComboboxResolution->setUi( myUi );
         cameraHBoxLayout->addWidget( qComboboxResolution );
 
         vertikalSpacer = new QSpacerItem( 20, 40, QSizePolicy::Minimum, QSizePolicy::Expanding );
