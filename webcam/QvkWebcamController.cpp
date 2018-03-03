@@ -109,14 +109,14 @@ void QvkWebcamController::slot_addCamera( QString description, QString device )
 
 void QvkWebcamController::slot_removedCamera( QString device )
 {
-    // Wenn wien Kamerafenster geöffnet ist muß dieses zuvor geschloßen werden
+    // Wenn ein Kamerafenster geöffnet ist muß dieses zuvor geschloßen werden
     QList<QCheckBox *> listQCheckBox = myUi.scrollAreaWidgetContents->findChildren<QCheckBox *>();
     for ( int i = 0; i < listQCheckBox.count(); i++ )
     {
         if ( listQCheckBox.at(i)->objectName() == "CheckboxDescription" + device )
         {
             if ( listQCheckBox.at(i)->checkState() == Qt::Checked )
-               listQCheckBox.at(i)->click();
+                listQCheckBox.at(i)->click();
         }
     }
 
@@ -209,7 +209,7 @@ void QvkWebcamController::slot_StatusChangedAddSolutions( QCamera::Status status
                     listQComboBox[i]->setCurrentIndex( index );
             }
         }
-        qDebug() << "[vokoscreen] ---End search camera parameters and checkbox is disabled---";
+        qDebug() << "[vokoscreen] ---End search camera parameters---";
         qDebug() << "";
 
         loadedStatus = true;
